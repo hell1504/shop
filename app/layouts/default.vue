@@ -28,11 +28,11 @@ function openCheckout() {
         <div class="flex items-center justify-between h-16">
           <!-- Logo + Name -->
           <NuxtLink to="/" class="flex items-center gap-2.5">
-            <div
-              class="size-8 rounded-lg bg-primary flex items-center justify-center"
-            >
-              <UIcon name="i-lucide-gem" class="size-4 text-white" />
-            </div>
+            <img
+              src="/logo.png"
+              alt="Logo"
+              class="size-8 rounded-lg object-contain"
+            />
             <span class="text-lg font-bold tracking-tight">{{
               settings.name
             }}</span>
@@ -98,11 +98,11 @@ function openCheckout() {
           class="flex flex-col gap-6 py-6 md:flex-row md:items-center md:justify-between"
         >
           <div class="flex items-center gap-3">
-            <div
-              class="size-10 rounded-lg bg-primary flex items-center justify-center"
-            >
-              <UIcon name="i-lucide-box" class="size-5 text-white" />
-            </div>
+            <img
+              src="/logo.png"
+              alt="Logo"
+              class="size-10 rounded-lg object-contain"
+            />
             <div>
               <p class="font-bold">
                 {{ settings.name }}
