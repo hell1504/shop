@@ -20,20 +20,20 @@ function openCheckout() {
 
 <template>
   <div class="min-h-screen flex flex-col bg-default">
-    <!-- Navbar -->
+    <!-- Сплошная шапка-полоса на весь верх экрана -->
     <header
-      class="sticky top-0 z-50 border-b border-default bg-elevated/80 backdrop-blur-xl"
+      class="sticky top-0 z-50 w-full border-b border-default bg-elevated/80 backdrop-blur-xl"
     >
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
+        <div class="flex items-center justify-between h-14">
           <!-- Logo + Name -->
           <NuxtLink to="/" class="flex items-center gap-3">
             <img
               src="/logo.png"
               alt="Logo"
-              class="size-10 rounded-lg object-contain"
+              class="size-9 rounded-lg object-contain"
             />
-            <span class="text-lg font-bold tracking-tight">{{
+            <span class="text-base font-bold tracking-tight">{{
               settings.name
             }}</span>
           </NuxtLink>
@@ -89,7 +89,7 @@ function openCheckout() {
     </template>
 
     <!-- Footer -->
-    <footer class="border-t border-default">
+    <footer class="border-t border-default mt-8">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Footer top -->
         <div
