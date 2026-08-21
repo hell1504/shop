@@ -1,41 +1,41 @@
 <script setup lang="ts">
-const cart = useCartStore()
-const settings = useShopSettingsStore()
+const cart = useCartStore();
+const settings = useShopSettingsStore();
 
 interface navLink {
-  label: string
-  to: string
-  icon: string
+  label: string;
+  to: string;
+  icon: string;
 }
 
-const navLinks: navLink[] = []
+const navLinks: navLink[] = [];
 
-const cartOpen = ref(false)
-const checkoutOpen = ref(false)
+const cartOpen = ref(false);
+const checkoutOpen = ref(false);
 
 function openCheckout() {
-  checkoutOpen.value = true
+  checkoutOpen.value = true;
 }
 </script>
 
 <template>
   <div class="min-h-screen flex flex-col bg-default">
     <!-- Navbar -->
-    <header class="sticky top-0 z-50 border-b border-default bg-elevated/80 backdrop-blur-xl">
+    <header
+      class="sticky top-0 z-50 border-b border-default bg-elevated/80 backdrop-blur-xl"
+    >
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <!-- Logo + Name -->
-          <NuxtLink
-            to="/"
-            class="flex items-center gap-2.5"
-          >
-            <div class="size-8 rounded-lg bg-primary flex items-center justify-center">
-              <UIcon
-                name="i-lucide-box"
-                class="size-4 text-white"
-              />
+          <NuxtLink to="/" class="flex items-center gap-2.5">
+            <div
+              class="size-8 rounded-lg bg-primary flex items-center justify-center"
+            >
+              <UIcon name="i-lucide-gem" class="size-4 text-white" />
             </div>
-            <span class="text-lg font-bold tracking-tight">{{ settings.name }}</span>
+            <span class="text-lg font-bold tracking-tight">{{
+              settings.name
+            }}</span>
           </NuxtLink>
 
           <!-- Nav links (desktop) -->
@@ -70,10 +70,7 @@ function openCheckout() {
                   size="2xl"
                   color="primary"
                 >
-                  <UIcon
-                    name="i-lucide-shopping-cart"
-                    class="size-5"
-                  />
+                  <UIcon name="i-lucide-shopping-cart" class="size-5" />
                 </UChip>
               </UButton>
             </ClientOnly>
@@ -89,10 +86,7 @@ function openCheckout() {
 
     <!-- Cart (opt-in) -->
     <template v-if="settings.cartEnabled">
-      <ShopCartDrawer
-        v-model:open="cartOpen"
-        @checkout="openCheckout"
-      />
+      <ShopCartDrawer v-model:open="cartOpen" @checkout="openCheckout" />
       <ShopCheckoutModal v-model:open="checkoutOpen" />
     </template>
 
@@ -100,52 +94,46 @@ function openCheckout() {
     <footer class="border-t border-default">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Footer top -->
-        <div class="flex flex-col gap-6 py-6 md:flex-row md:items-center md:justify-between">
+        <div
+          class="flex flex-col gap-6 py-6 md:flex-row md:items-center md:justify-between"
+        >
           <div class="flex items-center gap-3">
-            <div class="size-10 rounded-lg bg-primary flex items-center justify-center">
-              <UIcon
-                name="i-lucide-box"
-                class="size-5 text-white"
-              />
+            <div
+              class="size-10 rounded-lg bg-primary flex items-center justify-center"
+            >
+              <UIcon name="i-lucide-box" class="size-5 text-white" />
             </div>
             <div>
               <p class="font-bold">
                 {{ settings.name }}
               </p>
-              <p
-                v-if="settings.description"
-                class="text-sm text-muted"
-              >
+              <p v-if="settings.description" class="text-sm text-muted">
                 {{ settings.description }}
               </p>
             </div>
           </div>
 
           <nav class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-            <NuxtLink
-              to="/legal/offer"
-              class="text-muted hover:text-default"
-            >
+            <NuxtLink to="/legal/offer" class="text-muted hover:text-default">
               Публичная оферта
             </NuxtLink>
-            <NuxtLink
-              to="/legal/terms"
-              class="text-muted hover:text-default"
-            >
+            <NuxtLink to="/legal/terms" class="text-muted hover:text-default">
               Пользовательское соглашение
             </NuxtLink>
-            <NuxtLink
-              to="/legal/privacy"
-              class="text-muted hover:text-default"
-            >
+            <NuxtLink to="/legal/privacy" class="text-muted hover:text-default">
               Политика конфиденциальности
             </NuxtLink>
           </nav>
         </div>
 
         <!-- Footer bottom -->
-        <div class="border-t border-default py-4 text-center text-sm text-muted">
-          <p>&copy; {{ new Date().getFullYear() }} {{ settings.name }}. Все права защищены.</p>
+        <div
+          class="border-t border-default py-4 text-center text-sm text-muted"
+        >
+          <p>
+            &copy; {{ new Date().getFullYear() }} {{ settings.name }}. Все права
+            защищены.
+          </p>
           <p class="mt-1">
             Сайт создан
             <NuxtLink
