@@ -27,11 +27,11 @@ function openCheckout() {
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <!-- Logo + Name -->
-          <NuxtLink to="/" class="flex items-center gap-2.5">
+          <NuxtLink to="/" class="flex items-center gap-3">
             <img
               src="/logo.png"
               alt="Logo"
-              class="size-8 rounded-lg object-contain"
+              class="size-10 rounded-lg object-contain"
             />
             <span class="text-lg font-bold tracking-tight">{{
               settings.name
@@ -54,8 +54,6 @@ function openCheckout() {
           <!-- Right side -->
           <div class="flex items-center gap-2">
             <ShopCurrencySwitcher />
-            <!-- ClientOnly: cart count comes from localStorage, so SSR would
-                 render 0 and mismatch the hydrated value. -->
             <ClientOnly v-if="settings.cartEnabled">
               <UButton
                 variant="ghost"
@@ -97,11 +95,11 @@ function openCheckout() {
         <div
           class="flex flex-col gap-6 py-6 md:flex-row md:items-center md:justify-between"
         >
-          <div class="flex items-center gap-3">
+          <div class="flex items-center gap-3.5">
             <img
               src="/logo.png"
               alt="Logo"
-              class="size-10 rounded-lg object-contain"
+              class="size-12 rounded-lg object-contain"
             />
             <div>
               <p class="font-bold">
