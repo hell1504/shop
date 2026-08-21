@@ -20,12 +20,12 @@ function openCheckout() {
 
 <template>
   <div class="min-h-screen flex flex-col bg-default">
-    <!-- Сплошная шапка-полоса на весь верх экрана -->
-    <header
-      class="sticky top-0 z-50 w-full border-b border-default bg-elevated/80 backdrop-blur-xl"
-    >
+    <!-- Шапка-плашка в ширину контента сайта -->
+    <header class="pt-4 pb-2 w-full">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-14">
+        <div
+          class="flex items-center justify-between h-14 px-4 sm:px-6 rounded-2xl border border-default bg-elevated/80 backdrop-blur-xl shadow-md"
+        >
           <!-- Logo + Name -->
           <NuxtLink to="/" class="flex items-center gap-3">
             <img
@@ -78,7 +78,7 @@ function openCheckout() {
     </header>
 
     <!-- Main -->
-    <main class="flex-1">
+    <main class="flex-1 mt-2">
       <slot />
     </main>
 
