@@ -26,9 +26,13 @@ function openCheckout() {
       <div
         class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] sm:w-[1000px] h-[500px] bg-emerald-500/15 rounded-full blur-[130px]"
       />
-      <!-- Боковой фоновый акцент -->
+      <!-- Правый фоновый акцент -->
       <div
         class="absolute top-1/3 -right-32 w-[450px] h-[450px] bg-emerald-600/10 rounded-full blur-[110px]"
+      />
+      <!-- Нижний левый фоновый акцент -->
+      <div
+        class="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-emerald-500/15 rounded-full blur-[120px]"
       />
     </div>
 

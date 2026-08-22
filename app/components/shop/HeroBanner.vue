@@ -47,12 +47,16 @@ function copyIp(ip: string) {
         />
       </div>
 
-      <!-- Правый блок с киркой (сохранили стиль, сделали слегка прозрачным) -->
+      <!-- Правый блок с вашей картинкой -->
       <div class="hidden md:block">
         <div
-          class="size-48 rounded-xl bg-black/30 backdrop-blur-sm border border-white/10 flex items-center justify-center"
+          class="size-48 rounded-xl bg-black/30 backdrop-blur-sm border border-white/10 flex items-center justify-center p-6"
         >
-          <UIcon name="i-lucide-pickaxe" class="size-24 text-white/40" />
+          <img
+            src="/hero-icon.png"
+            alt="Hero Icon"
+            class="max-w-full max-h-full object-contain [image-rendering:pixelated]"
+          />
         </div>
       </div>
     </div>
